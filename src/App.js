@@ -7,9 +7,10 @@ import ArticleList from './component/articleList';
 
 
 const contentStyle = {
-  marginTop: "6em",
   boxShadow : "rgb(204, 204, 204) 0px 1px 2px",
-  background: "#fff"
+  background: "rgb(255, 255, 255, .5)",
+  width: 800,
+  marginBottom: "2em"
 };
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav/>
-        <Container style={contentStyle} text>
+        <Container style={contentStyle}>
           <ArticleList />
           {/* <Article /> */}
         </Container>

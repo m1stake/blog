@@ -4,192 +4,31 @@ import './font.css';
 import './articleList.css';
 
 
+const itemContentStyle = {
+    lineHeight: "1.6em",
+    paddingLeft: "1em",
+    fontSize: 21
+}
+
+
 class ArticleList extends Component {
 
     render () {
+        let items = [];
+        for (var i = 0; i < 15; i++) {
+            items.push(
+                <List.Item>
+                    <List.Content style={itemContentStyle}>
+                        <a>Java原生数据类型的拆装箱</a>
+                    </List.Content>
+                </List.Item>
+            );
+        }
+
         return (
-            <Container>
-                <List celled relaxed className="article-list">
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <List.Content>
-                            Java原生数据类型的拆装箱                        
-                        </List.Content>
-                    </List.Item>
+            <Container style={{padding: "0.5em 0", marginTop: "3em"}}>
+                <List divided selection relaxed className="article-list">
+                    {items}
                 </List>
             </Container>
         );
