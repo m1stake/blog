@@ -3,3 +3,15 @@
     font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, 'Microsoft YaHei', 'Songti SC', SimSun, Heiti, sans-serif;
 }
 
+@media screen and (max-device-width: 600px) {
+    .item {
+        font-size: 1em
+    }
+}
+
+@media screen and (min-device-width: 601px) {
+    .item {
+        font-size: 1.15em
+    }
+}
+

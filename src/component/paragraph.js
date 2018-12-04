@@ -21,24 +21,34 @@ class Paragraph extends Component {
     render () {
         return (
             <div style={contentStyle}>
-                <Header style={header2Style}>
-                    原生类型与引用类型
-                </Header>
+                <Header style={header2Style}>{ this.props.header }</Header>
                 <hr/>
                 <div style={{marginTop: "1.5em"}}>
-                    <p>
-                    埃里克森的积分卡就是打开了埃里克森的积分，卡就是打开了埃里克森的积分卡就是打开了。
-                    埃里克森的积分卡就是打，开了埃里克森的积分卡就是打开。
-                    </p>
-                    <p>
-                    了埃里克森的积分卡就是打开了，
-                    埃里克森的积分卡就是打开了埃里。克森的积分卡就是打开了埃里克森的积分卡就是打开了。
-                    </p>
+                    {
+                        [
+                            this.props.ps
+                        ]
+                    }
                 </div>
             </div>
         )
     }
 
 }
-
+const p = `
+<Header style={header2Style}>
+    原生类型与引用类型
+</Header>
+<hr/>
+<div style={{marginTop: "1.5em"}}>
+    <p>
+    埃里克森的积分卡就是打开了埃里克森的积分，卡就是打开了埃里克森的积分卡就是打开了。
+    埃里克森的积分卡就是打，开了埃里克森的积分卡就是打开。
+    </p>
+    <p>
+    了埃里克森的积分卡就是打开了，
+    埃里克森的积分卡就是打开了埃里。克森的积分卡就是打开了埃里克森的积分卡就是打开了。
+    </p>
+</div>
+`
 export default Paragraph
