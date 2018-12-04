@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Container} from "semantic-ui-react";
 import './font.css';
 import articles from '../service/db.js'
+import hljs from "highlight.js"
 
 
 const containerStyle = {
@@ -11,12 +12,15 @@ const containerStyle = {
 
 class Article extends Component {
 
+    componentDidMount() {
+        hljs.initHighlighting();
+    }
 
     render () {
         let Content = articles[this.props.articleid].content;
         return (
             <Container style={containerStyle}>
-                <Content />
+                <Content ref="content" />
             </Container>
         );
     }

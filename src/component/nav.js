@@ -22,7 +22,7 @@ class Nav extends Component {
         return (<Menu className="nav-font nav" size="mini" 
             style={{display: this.state.show ? "flex" : "none"}}>
             <MenuHeader style={menuHeaderStyle}>沉默的羔羊</MenuHeader>
-            <MenuItem position="right" link>XXXX</MenuItem>
+            <MenuItem position="right" link onClick={this.props.toIndex}> 首页 </MenuItem>
             <MenuItem link>ZZZ</MenuItem>
         </Menu>);
     }

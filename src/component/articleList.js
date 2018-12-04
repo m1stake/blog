@@ -10,7 +10,6 @@ const itemContentStyle = {
     paddingLeft: "1em",
 }
 
-
 class ArticleList extends Component {
 
     render () {
@@ -22,7 +21,7 @@ class ArticleList extends Component {
                         Object.entries(articles).map( ([id, article]) => (
                             <List.Item key={id} articleid={id} onClick={this.props.toArticle}>
                                 <List.Content className="item" style={itemContentStyle}>
-                                    <a>{ article.title }</a>
+                                    <a href={ "#/article/" + id }>{ article.title }</a>
                                 </List.Content>
                             </List.Item>
                         ))

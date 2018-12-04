@@ -4,6 +4,7 @@ import { Container } from 'semantic-ui-react';
 import Nav from './component/nav';
 import Article from './component/article';
 import ArticleList from './component/articleList';
+import hljs from "highlight.js"
 
 
 const contentStyle = {
@@ -22,24 +23,29 @@ class App extends Component {
     this.state = {
       index: true
     }
+  }
 
-    // This binding is necessary to make `this` work in the callback
+  componentDidUpdate() {
+    hljs.initHighlighting.called = false;
+    hljs.initHighlighting();
   }
 
   loadArticle(event, a) {
-    this.setState({ index: false, articleid:  a.articleid})
+    this.setState({ index: false, articleid:  a.articleid});
+  }
+
+  loadIndex() {
+    this.setState({ index: true, articleid:  null})
   }
 
   render() {
+    let articleList = <ArticleList toArticle={ this.loadArticle.bind(this) } />;
+    let article = <Article articleid={ this.state.articleid } />;
     return (
       <div className="App" ref={ this.handleContextRef }>
-        <Nav ref="nav"/>
+        <Nav ref="nav" toIndex={ this.loadIndex.bind(this) } />
         <Container style={ contentStyle }>
-          { 
-            this.state.index ? 
-              <ArticleList toArticle={ this.loadArticle.bind(this) } /> 
-              : <Article articleid={ this.state.articleid } /> 
-          }
+          { this.state.index ? articleList : article }
         </Container>
       </div>
     );
