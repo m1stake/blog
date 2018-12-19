@@ -12,7 +12,8 @@ const contentStyle = {
     fontSize: "18px",
     marginTop: "2em",
     paddingBottom: "1em",
-    fontFamily: '"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif'
+    // fontFamily: '"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif'
+    fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace'
 }
 
 

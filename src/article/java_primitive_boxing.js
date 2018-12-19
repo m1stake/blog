@@ -5,6 +5,14 @@ import Paragraph from '../component/paragraph'
 
 const title = "Java基本类型的拆装箱"
 
+const codeStyle = {
+    fontFamily: 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
+    fontSize: '.85em',
+    padding: '.8em',
+    overflow: 'auto',
+    borderRadius: '3px',
+    background: '#f5f5f5'
+}
 
 class Content extends Component {
 
@@ -22,7 +30,7 @@ class Content extends Component {
                 [
                     <p key="0" >Java标准库为每种基本类型提供两个方法用于基本类型和引用类型相互转换。</p>,
                     <pre key="1" >
-                        <code className="java">
+                        <code className="java" style={codeStyle}>
 { `
 static Ref valueOf(primitive p)     // 将引用类型转换为基本类型
 primitive xxxValue(Ref r)           // 将基本类型转换为引用类型
@@ -34,12 +42,12 @@ primitive xxxValue(Ref r)           // 将基本类型转换为引用类型
                         这就解释了，为什么将空的引用类型赋值给基本类型的时候是报空指针异常。
                     </p>,
                     <p key="3">
-                        这种转换是由编译器完成的，换句话说，我们可以将这种隐式转换理解为语法糖。一旦进入运行时，变量只能被一致的类型值赋值，这也是为什么在使用反射的代码中，所有的基本类型和引用类型都要明确进行类型转换。
+                        这种转换是由编译器完成的。一旦进入运行时，变量只能被一致的类型值赋值，这也是为什么在使用反射的代码中，所有的基本类型和引用类型都要明确进行类型转换。
                     </p>,
                     <p key="4">我们可以看一段代码和它编译后的字节码：</p>,
                     <pre key="5">
-                        <code className="java">
-{ 
+                        <code className="java" style={codeStyle}>
+{
 `// 编译前的代码
 Integer i = null;
 int j = i;
@@ -54,7 +62,7 @@ Integer k = j;
 7: iload_2
 8: invokestatic  #3         // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
 11: astore_3
-12: return` 
+12: return`
 }
                         </code>
                     </pre>,
@@ -66,7 +74,7 @@ Integer k = j;
                 [
                     "我们再看一个强制类型转换的例子。",
                     <pre key="0">
-                        <code className="java">
+                        <code className="java" style={codeStyle}>
 {
 `//隐式转换的代码：
 int m = (Integer) 1;
@@ -82,7 +90,7 @@ int m = (Integer) 1;
                     </pre>,
                     "这与：",
                     <pre key="2">
-                        <code className="java">
+                        <code className="java" style={codeStyle}>
 { `int m = Integer.valueOf(1).intValue();` }
                         </code>
                     </pre>,
@@ -91,8 +99,8 @@ int m = (Integer) 1;
             }/>
         ]
     }
-}             
- 
+}
+
 const article = {
     title: title,
     content: Content
