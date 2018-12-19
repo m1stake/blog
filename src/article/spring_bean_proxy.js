@@ -131,7 +131,7 @@ class Main {
     public void sayHello () {
         long start = System.currentTimeMillis();
         raw.sayHello();
-        System.out.println("IRaw.sayHello Taking ", System.currentTimeMillis() - start);
+        System.out.println("IRaw.sayHello Taking " + (System.currentTimeMillis() - start));
     }
 }` }
                         </code>
@@ -154,7 +154,7 @@ class TimerProxy implements $interface {
         $m.modifiers $m.name($m.args) {
             long start = System.currentTimeMillis();
             target.$m.name($m.args);
-            System.out.println("$interface.$m.name Taking ", System.currentTimeMillis() - start);
+            System.out.println("$interface.$m.name Taking " + (System.currentTimeMillis() - start));
         }
     #end
 }
