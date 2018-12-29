@@ -3,6 +3,7 @@ import {Container, List} from "semantic-ui-react"
 import './font.css'
 import './articleList.css'
 import articles  from '../service/db'
+import { Link } from 'react-router-dom'
 
 
 const itemContentStyle = {
@@ -21,7 +22,7 @@ class ArticleList extends Component {
                         Object.entries(articles).map( ([id, article]) => (
                             <List.Item key={id} articleid={id} onClick={this.props.toArticle}>
                                 <List.Content className="item" style={itemContentStyle}>
-                                    <a href={ "#/article/" + id }>{ article.title }</a>
+                                    <Link to={'/article/' + id}>{ article.title }</Link>
                                 </List.Content>
                             </List.Item>
                         ))

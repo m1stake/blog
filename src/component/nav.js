@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Menu, MenuItem, MenuHeader } from 'semantic-ui-react';
 import './font.css';
 import './nav.css';
+import { Link } from 'react-router-dom'
 
 const menuHeaderStyle = {
     fontSize: "16px", 
@@ -22,7 +23,7 @@ class Nav extends Component {
         return (<Menu className="nav-font nav" size="mini" 
             style={{display: this.state.show ? "flex" : "none"}}>
             <MenuHeader style={menuHeaderStyle}>沉默的羔羊</MenuHeader>
-            <MenuItem position="right" link onClick={this.props.toIndex}> 首页 </MenuItem>
+            <MenuItem position="right" link><Link to="/"> 首页 </Link></MenuItem>
             <MenuItem link>ZZZ</MenuItem>
         </Menu>);
     }

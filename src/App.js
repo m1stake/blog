@@ -30,22 +30,12 @@ class App extends Component {
     hljs.initHighlighting();
   }
 
-  loadArticle(event, a) {
-    this.setState({ index: false, articleid:  a.articleid});
-  }
-
-  loadIndex() {
-    this.setState({ index: true, articleid:  null})
-  }
-
   render() {
-    let articleList = <ArticleList toArticle={ this.loadArticle.bind(this) } />;
-    let article = <Article articleid={ this.state.articleid } />;
     return (
       <div className="App" ref={ this.handleContextRef }>
-        <Nav ref="nav" toIndex={ this.loadIndex.bind(this) } />
+        <Nav/>
         <Container style={ contentStyle }>
-          { this.state.index ? articleList : article }
+            { this.props.children }
         </Container>
       </div>
     );

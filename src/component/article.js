@@ -17,7 +17,7 @@ class Article extends Component {
     }
 
     render () {
-        let Content = articles[this.props.articleid].content;
+        let Content = articles[this.props.match.params.id].content;
         return (
             <Container style={containerStyle}>
                 <Content ref="content" />
