@@ -244,8 +244,37 @@ public final class $Proxy0 extends Proxy implements IRaw {
                     </p>,
                     <pre key="1">
                         <code className="java" style={codeStyle}>
-{`Cglib动态代理使用继承和方法回调的方式实现，动态织入的代理逻辑需要实现MethodInterceptor接口。
-下面是一个Cglib库动态代理使用的示例：`}
+{`public TimerProxy implements MethodInterceptor {
+
+    @Override
+    public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
+        long start = System.currentTimeMillis();
+        Object result = proxy.invokeSuper(obj, args);        
+        System.out.println("_._ Taking " + (System.currentTimeMillis() - start));
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(Raw.class);
+        enhancer.setCallback(new TimerProxy());
+        Raw raw = (Raw) enhancer.create();
+        raw.sayHello();
+    }
+}
+
+// 生成的代理类（只取其中一部分，整个结构比较乱。标准库到底要优雅得多）
+public class Raw$$EnhancerByCGLIB$$7dc5842d extends Raw implements Factory {
+
+    public final void sayHello() {
+        MethodInterceptor mInterceptor = this.CGLIB$CALLBACK_0;
+        if (mInterceptor != null) {
+            mInterceptor.intercept(this, CGLIB$sayHello$0$Method, CGLIB$emptyArgs, CGLIB$sayHello$0$Proxy);
+        } else {
+            super.sayHello();
+        }
+    }
+}`}
                         </code>
                     </pre>
                 ]
