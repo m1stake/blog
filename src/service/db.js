@@ -4,7 +4,7 @@ import { article as SBP } from '../article/spring_bean_proxy'
 
 const articles = {
     1: JPB,
-    2: SBP
+    2: SBP,
 }
 
 export default articles 

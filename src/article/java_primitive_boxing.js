@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Title from '../component/title'
 import Paragraph from '../component/paragraph'
+import ReactSVG from 'react-svg'
 
 
 const title = "Java基本类型的拆装箱"
@@ -94,7 +95,8 @@ int m = (Integer) 1;
 { `int m = Integer.valueOf(1).intValue();` }
                         </code>
                     </pre>,
-                    "生成的字节码是完全一样的。"
+                    "生成的字节码是完全一样的。",
+                    <ReactSVG key="3" src="/a.svg" />
                 ]
             }/>
         ]

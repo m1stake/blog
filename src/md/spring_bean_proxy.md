@@ -95,7 +95,7 @@ class TimerProxy implements IRaw {
     }
 }
 ```
-这时候，如果我们还有其它的几十个类几百个方法，我们肯定不想为每个类都编写一个TimerProxy类。这时候我们可以使用反射的方式来生成代理类的代码，然后使用程序编译和加载生成的代理类（关于运行时编译代码和加载类的相关信息可以搜索JavaCompiler）。
+如果我们还有其它的几十个类几百个方法，我们肯定不想为每个类都编写一个TimerProxy类。我们可以使用反射的方式来生成代理类的代码，然后使用程序编译和加载生成的代理类（关于运行时编译代码和加载类的相关信息可以搜索JavaCompiler）。
 ```Java
 // 生成代理的模板
 class TimerProxy implements $interface {
