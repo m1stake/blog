@@ -96,7 +96,6 @@ int m = (Integer) 1;
                         </code>
                     </pre>,
                     "生成的字节码是完全一样的。",
-                    <ReactSVG key="3" src="/a.svg" />
                 ]
             }/>
         ]
