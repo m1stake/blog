@@ -20,7 +20,15 @@ class ArticleList extends Component {
                 <List divided selection relaxed className="article-list">
                     {
                         articles.map( (article, index) => (
-                            <List.Item key={index} articleid={index} onClick={this.props.toArticle}>
+                            <List.Item key={index} articleid={index} onClick={e => {
+                                let t = e.target;
+                                while (t && t.tagName.toLowerCase() !== 'a') {
+                                    t = t.firstElementChild;
+                                }
+                                if (t) {
+                                    t.click();
+                                }
+                            }}>
                                 <List.Content className="item" style={itemContentStyle}>
                                     <Link to={'/article/' + index}>{ article.title }</Link>
                                 </List.Content>
