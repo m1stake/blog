@@ -7,15 +7,15 @@ import 'semantic-ui-css/semantic.min.css'
 import 'highlight.js/styles/lightfair.css'
 import Article from './component/article'
 import ArticleList from './component/articleList'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <App>
             <Route exact path="/" component={ArticleList} />
             <Route path="/article/:id" component={Article} />
         </App>
-    </BrowserRouter>, 
+    </HashRouter>, 
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

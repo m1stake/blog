@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Container } from 'semantic-ui-react';
 import Nav from './component/nav';
-import Article from './component/article';
-import ArticleList from './component/articleList';
 import hljs from "highlight.js"
 
 
