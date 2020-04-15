@@ -259,28 +259,16 @@ class Raw {
 // 代理类
 class RawP extends Raw {
     ...
-    public void sayHelloAgain() {
-        target.sayHello();
-        System.out.pringln("sayHelloAgain proxied");
-    }
 
     public static void main(String args[]) {
         Raw raw = new RawP(new Raw());
+
         /*
          * 输出
          *    hello
-         *    sayHello proxied
-         * 没问题
-         */
-        raw.sayHello();
-        /*
-         * 输出
-         *    hello
-         *    sayHelloAgain proxied
          * 我们实际希望得到的输出
          *    hello
          *    sayHello proxied
-         *    sayHelloAgain proxied
          */
         raw.sayHelloAgain();
     }
@@ -308,11 +296,7 @@ class RawP extends Raw {
 
     public void sayHello() {
         super.sayHello();
-        System.out.pringln("sayHelloAgain proxied");
-    }
-    public void sayHelloAgain() {
-        super.sayHello();
-        System.out.pringln("sayHelloAgain proxied");
+        System.out.pringln("sayHello proxied");
     }
 
     public static void main(String args[]) {
@@ -321,7 +305,6 @@ class RawP extends Raw {
          * 输出
          *    hello
          *    sayHello proxied
-         *    sayHelloAgain proxied
          *
          * 因为Raw的sayHello方法已经在代理类中被覆盖了
          */
